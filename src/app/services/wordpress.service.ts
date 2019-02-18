@@ -24,4 +24,8 @@ export class WordpressService {
     public search(searchStr: string, page: number): any {
         return this.http.get("https://public-api.wordpress.com/rest/v1.2/sites/unegatuaj.com/posts/?status=publish&search="+searchStr+"&page="+page);
     }
+
+    public getPost(recipeId: string): any {
+        return this.http.get("https://public-api.wordpress.com/rest/v1.1/sites/unegatuaj.com/posts/"+recipeId);
+    }
 }

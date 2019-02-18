@@ -9,15 +9,11 @@
     <br>
     <ion-progress-bar *ngIf="loading === true" type="indeterminate"></ion-progress-bar>
 
-    <ion-card *ngFor="let item of getKeys(thumbs)">
-        <ion-card-header>
-            <ion-card-title>
-              {{thumbs.get(item).title}}
-            </ion-card-title>
-        </ion-card-header>    
-        <ion-card-content>
-            <div [innerHTML]="thumbs.get(item).content"></div>
-        </ion-card-content>
+    <ion-card *ngFor="let item of getKeys(thumbs)" (click)="goTo(thumbs.get(item).id)">
+          <ion-img [src]="thumbs.get(item).imageUrl"></ion-img>
+          <ion-card-subtitle style="padding:5px;">
+            {{thumbs.get(item).title}}
+          </ion-card-subtitle>
     </ion-card>
     <ion-button *ngIf="loaded === true" (click)="next()">Me shume receta</ion-button>
 

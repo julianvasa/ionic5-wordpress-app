@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {WordpressService} from '../services/wordpress.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab4',
@@ -19,7 +20,7 @@ export class Tab4Page implements OnInit {
   loaded: boolean;
   loading: boolean;
 
-  constructor(public wordpressService: WordpressService, private route: ActivatedRoute) {
+  constructor(public wordpressService: WordpressService, private route: ActivatedRoute, private router: Router) {
   }
 
   getKeys(map){
@@ -34,9 +35,13 @@ export class Tab4Page implements OnInit {
     return str.replace(new RegExp(this.escapeRegExp(find), 'g'), replace);
   }
 
-  capitalizeFirstLetter(str) {
+  capitalizeFirstLetter(str)   {
     str = this.replaceAll(str, "-"," ");
     return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  goTo(str: string){
+    this.router.navigate([ '/tabs/receta/'+ str ]);
   }
 
   loadPosts(){
@@ -45,8 +50,11 @@ export class Tab4Page implements OnInit {
     this.wordpressService.getPostsByCat(this.categoryName, this.page).subscribe(data => {
       this.items = data.posts;
       for (let res of data.posts) {
-        if(!this.thumbs.has(res.ID)){
-          this.thumbs.set(res.ID, {id: res.ID, title: res.title, content: res.content.replace('<li class="jetpack-recipe-print"><a href="#">Print</a></li>','')});
+        for (var k in res.attachments) {
+          if(!this.thumbs.has(res.ID)){
+            this.thumbs.set(res.ID, {id: res.ID, imageUrl: res.attachments[k].URL,//+"?resize=219%2C219", 
+            title: res.title, content: res.content.replace('<li class="jetpack-recipe-print"><a href="#">Print</a></li>','')});
+          }
         }
       }
       this.loading = false;

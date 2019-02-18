@@ -8,9 +8,9 @@ A simple app build with Ionic v4.
 - Search through all posts
 - Pagination
 
+`npm start` to try it out
+
 It looks something like this: 
 
 ![Screenshot](Screenshot.png)
-
-
-`npm start` to try it out
+![Screenshot2](Screenshot2.png)

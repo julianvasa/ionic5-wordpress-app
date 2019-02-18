@@ -86,18 +86,30 @@
   }
 
   .sc-ion-card-md-h {
-    -webkit-margin-start: 0px;
-    margin-inline-start: 0px;
-    -webkit-margin-end: 0px;
-    margin-inline-end: 0px;
+    -webkit-margin-start: 5px;
+    margin-inline-start: 5px;
+    -webkit-margin-end: 5px;
+    margin-inline-end: 5px;
     --inner-padding-end:0px;
+    width:45%;
+    float:left;
   }
 
   .sc-ion-card-ios-h {
-    -webkit-margin-start: 0px;
-    margin-inline-start: 0px;
-    -webkit-margin-end: 0px;
-    margin-inline-end: 0px;
+    -webkit-margin-start:5px;
+    margin-inline-start: 5px;
+    -webkit-margin-end: 5px;
+    margin-inline-end: 5px;
+    --inner-padding-end:0px;
+    width:45%;
+    float:left;
+  } 
+
+  .ion-card-header{
+    -webkit-margin-start: 5px;
+    margin-inline-start: 5px;
+    -webkit-margin-end: 5px;
+    margin-inline-end: 5px;
     --inner-padding-end:0px;
   }
 
