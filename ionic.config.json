@@ -1,0 +1,8 @@
+{
+  "name": "unegatuaj",
+  "app_id": "",
+  "type": "angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

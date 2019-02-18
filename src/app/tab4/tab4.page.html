@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar color="warning">
+      <ion-title>
+        {{capitalizeFirstLetter(categoryName)}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+    <br>
+    <ion-progress-bar *ngIf="loading === true" type="indeterminate"></ion-progress-bar>
+
+    <ion-card *ngFor="let item of getKeys(thumbs)">
+        <ion-card-header>
+            <ion-card-title>
+              {{thumbs.get(item).title}}
+            </ion-card-title>
+        </ion-card-header>    
+        <ion-card-content>
+            <div [innerHTML]="thumbs.get(item).content"></div>
+        </ion-card-content>
+    </ion-card>
+    <ion-button *ngIf="loaded === true" (click)="next()">Me shume receta</ion-button>
+
+  </ion-content>
