@@ -10,6 +10,8 @@ A simple app build with Ionic v4.
 
 `npm start` to try it out
 
+change the wordpress.com urls in `src/app/services/wordpress.service.ts`
+
 It looks something like this: 
 
 ![Screenshot](Screenshot.png)
