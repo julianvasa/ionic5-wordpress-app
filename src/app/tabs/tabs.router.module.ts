@@ -17,7 +17,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'kategorite',
+        path: 'categories',
         children: [
           {
             path: '',
@@ -26,7 +26,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'kerkim',
+        path: 'search',
         children: [
           {
             path: '',
@@ -35,7 +35,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'kategoria/:id',
+        path: 'category/:id',
         children: [
           {
             path: '',
@@ -44,7 +44,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'receta/:id',
+        path: 'post/:id',
         children: [
           {
             path: '',

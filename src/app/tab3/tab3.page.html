@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="warning">
     <ion-title>
-      Kërkim
+      Search
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,9 +11,9 @@
   <ion-progress-bar *ngIf="searching === true" type="indeterminate"></ion-progress-bar>
 
   <ion-card>
-    <ion-input [(ngModel)]="searchStr" placeholder="Recete, Perberes..."></ion-input>
+    <ion-input [(ngModel)]="searchStr"></ion-input>
   </ion-card>
-  <ion-button (click)="search()" style="margin-top: 5px;padding-top: 5px;">Kërko</ion-button>
+  <ion-button (click)="search()" style="margin-top: 5px;padding-top: 5px;">Search</ion-button>
 
   <br>
   
@@ -27,6 +27,6 @@
           <div [innerHTML]="thumbs.get(item).content"></div>
       </ion-card-content>
   </ion-card>
-  <ion-button *ngIf="loaded === true" (click)="next()">Me shume receta</ion-button>
+  <ion-button *ngIf="loaded === true" (click)="next()">More posts</ion-button>
 
 </ion-content>

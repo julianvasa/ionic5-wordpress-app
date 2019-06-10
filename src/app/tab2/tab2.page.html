@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar color="warning">
       <ion-title>
-        Kategoritë
+        Categories
       </ion-title>
     </ion-toolbar>
   </ion-header>
@@ -10,7 +10,7 @@
     <ion-progress-bar *ngIf="loading === true" type="indeterminate"></ion-progress-bar>
 
     <ion-list>
-      <ion-item *ngFor="let item of getKeys(cats)" [routerLink]="'/tabs/kategoria/'+ cats.get(item).slug" detail>    
+      <ion-item *ngFor="let item of getKeys(cats)" [routerLink]="'/tabs/category/'+ cats.get(item).slug" detail>    
           <ion-item>
               <ion-avatar slot="start">
                 <img src="{{cats.get(item).imageUrl}}">
@@ -18,7 +18,7 @@
           </ion-item>
           <ion-label>
             <h2>{{cats.get(item).name}}</h2>
-            <p>{{cats.get(item).post_count}} receta</p>
+            <p>{{cats.get(item).post_count}} posts</p>
           </ion-label>
       </ion-item>
     </ion-list>

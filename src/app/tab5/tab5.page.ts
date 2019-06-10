@@ -21,9 +21,17 @@ export class Tab5Page implements OnInit {
 
   ngOnInit() {
     this.recipeId = this.route.snapshot.paramMap.get('id');
-    this.wordpressService.getPost(this.recipeId).subscribe(data => {
+    if(this.wordpressService.wp_org){
+        this.wordpressService.getPost(this.recipeId).subscribe(data => {
+          this.content = data.content.rendered;
+          this.title=data.title.rendered;
+        });
+    }
+    else {
+      this.wordpressService.getPost(this.recipeId).subscribe(data => {
           this.content = data.content;
           this.title=data.title;
-    });  
+      });  
+    }
   }
 }

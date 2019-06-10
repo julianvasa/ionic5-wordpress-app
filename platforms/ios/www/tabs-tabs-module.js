@@ -131,7 +131,7 @@ var routes = [
                 ]
             },
             {
-                path: 'kategorite',
+                path: 'categories',
                 children: [
                     {
                         path: '',
@@ -140,7 +140,7 @@ var routes = [
                 ]
             },
             {
-                path: 'kerkim',
+                path: 'search',
                 children: [
                     {
                         path: '',
@@ -149,7 +149,7 @@ var routes = [
                 ]
             },
             {
-                path: 'kategoria/:id',
+                path: 'category/:id',
                 children: [
                     {
                         path: '',

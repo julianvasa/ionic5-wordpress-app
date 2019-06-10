@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="warning">
     <ion-title>
-      Recetat e fundit
+      Recent posts
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -18,7 +18,7 @@
         <div [innerHTML]="thumbs.get(item).content"></div>
     </ion-card-content>
   </ion-card>
-  <ion-button *ngIf="loaded === true" (click)="next()">Me shume receta</ion-button>
+  <ion-button *ngIf="loaded === true" (click)="next()">More posts</ion-button>
 
   
 </ion-content>

@@ -25,16 +25,30 @@ export class Tab1Page implements OnInit {
 
   loadPosts(){
     this.loading = true;
-    this.wordpressService.getPosts(this.page).subscribe(data => {
-      this.items = data.posts;
-      for (let res of data.posts) {
-        if(!this.thumbs.has(res.ID)){
-          this.thumbs.set(res.ID, {id: res.ID, title: res.title, content: res.content.replace('<li class="jetpack-recipe-print"><a href="#">Print</a></li>','')});
-        }        
-      }
-      this.loading = false;
-      this.loaded = true;
-    });
+    if(this.wordpressService.wp_org){
+      this.wordpressService.getPosts(this.page).subscribe(data => {
+        this.items = data;
+        for (let res of data) {
+          if(!this.thumbs.has(res.id)){
+            this.thumbs.set(res.id, {id: res.id, title: res.title.rendered, content: res.content.rendered});
+          }        
+        }
+        this.loading = false;
+        this.loaded = true;
+      });
+    }
+    else {
+      this.wordpressService.getPosts(this.page).subscribe(data => {
+        this.items = data.posts;
+        for (let res of data.posts) {
+          if(!this.thumbs.has(res.ID)){
+            this.thumbs.set(res.ID, {id: res.ID, title: res.title, content: res.content.replace('<li class="jetpack-recipe-print"><a href="#">Print</a></li>','')});
+          }        
+        }
+        this.loading = false;
+        this.loaded = true;
+      });
+    }
   }
 
   next() {
