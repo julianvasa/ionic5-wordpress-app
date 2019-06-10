@@ -10,7 +10,7 @@ A simple app build with Ionic v4.
 
 `npm start` to try it out
 
-change the wordpress.com urls in `src/app/services/wordpress.service.ts`
+change the mainUrl variable in `src/app/services/wordpress.service.ts`
 
 If you have a self-hosted Wordpress blog it should work fine also with rest-api endpoints of your instance. 
 https://developer.wordpress.org/rest-api/reference/<br>
