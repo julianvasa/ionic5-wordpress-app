@@ -20,7 +20,7 @@ in `src/app/services/wordpress.service.ts`
 
 It looks something like this: 
 
-![Screenshot](Screenshot.png)
+![Screenshot1](Screenshot1.png)
 ![Screenshot2](Screenshot2.png)
 ![Screenshot3](Screenshot3.png)
 ![Screenshot4](Screenshot4.png)

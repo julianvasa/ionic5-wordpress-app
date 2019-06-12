@@ -27,11 +27,10 @@ export class Tab2Page implements OnInit {
         if(this.wordpressService.wp_org){
             this.wordpressService.getCategories().subscribe(data => {
               this.items = data;
-              console.log(data);
               for (let res of data) {
                   if(!this.cats.has(res.id) && res.parent == 0 && res.name !="Uncategorized" && res.count>0){
                     var image = "https://icon2.kisspng.com/20180516/vgq/kisspng-wordpress-com-computer-icons-blog-5afbe758a90bf2.5548964515264582006924.jpg";
-                    this.cats.set(res.id, {id: res.id, slug: res.slug, post_count: res.count, imageUrl: image, name: res.name});
+                    this.cats.set(res.id, {id: res.id, slug: res.id, post_count: res.count, imageUrl: image, name: res.name});
                   }
               }
               this.loading = false;

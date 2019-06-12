@@ -20,6 +20,9 @@ export class WordpressService {
     }
 
     public getPostsByCat(categoryName: string, page: number): any {
+        if(this.wp_org){
+            return this.http.get(this.mainUrl + "posts/?status=publish&categories="+categoryName+"&page="+page);
+        }
         return this.http.get(this.mainUrl + "posts/?status=publish&category="+categoryName+"&page="+page);
     }
 

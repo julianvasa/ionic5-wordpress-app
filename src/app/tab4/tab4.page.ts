@@ -50,7 +50,6 @@ export class Tab4Page implements OnInit {
     if(this.wordpressService.wp_org){
       this.wordpressService.getPostsByCat(this.categoryName, this.page).subscribe(data => {
         this.items = data;
-        console.log(data);
         for (let res of data) {
             if(!this.thumbs.has(res.id)){
               this.thumbs.set(res.id, {id: res.id, imageUrl: "https://icon2.kisspng.com/20180516/vgq/kisspng-wordpress-com-computer-icons-blog-5afbe758a90bf2.5548964515264582006924.jpg", 
