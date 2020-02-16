@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {WordpressService} from '../services/wordpress.service';
+import { WordpressService } from '../services/wordpress.service';
 import { ActivatedRoute } from '@angular/router';
-import { load } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss'],
-  providers:[WordpressService]
+  providers: [WordpressService]
 
 })
 export class Tab3Page implements OnInit {
   items: any[];
   attachs: any[];
-  thumbs =  new Map();
+  thumbs = new Map();
   thumbsArr: any[];
   categoryName: string;
   searchStr: string;
@@ -24,21 +23,21 @@ export class Tab3Page implements OnInit {
   constructor(public wordpressService: WordpressService, private route: ActivatedRoute) {
   }
 
-  search(){
+  search() {
     this.searching = true;
     this.thumbs = new Map();
     this.loadPosts();
   }
 
-  loadPosts(){
+  loadPosts() {
     this.categoryName = this.route.snapshot.paramMap.get('id');
-    if(this.wordpressService.wp_org){
-      if(this.searchStr != undefined){
+    if (this.wordpressService.wp_org) {
+      if (this.searchStr != undefined) {
         this.wordpressService.search(this.searchStr, this.page).subscribe(data => {
           this.items = data;
           for (let res of data) {
-            if(!this.thumbs.has(res.id)){
-              this.thumbs.set(res.id, {id: res.id, title: res.title.rendered, content: res.content.rendered});
+            if (!this.thumbs.has(res.id)) {
+              this.thumbs.set(res.id, { id: res.id, title: res.title.rendered, content: res.content.rendered });
             }
           }
           this.searching = false;
@@ -47,12 +46,12 @@ export class Tab3Page implements OnInit {
       }
     }
     else {
-      if(this.searchStr != undefined){
+      if (this.searchStr != undefined) {
         this.wordpressService.search(this.searchStr, this.page).subscribe(data => {
           this.items = data.posts;
           for (let res of data.posts) {
-            if(!this.thumbs.has(res.ID)){
-              this.thumbs.set(res.ID, {id: res.ID, title: res.title, content: res.content.replace('<li class="jetpack-recipe-print"><a href="#">Print</a></li>','')});
+            if (!this.thumbs.has(res.ID)) {
+              this.thumbs.set(res.ID, { id: res.ID, title: res.title, content: res.content.replace('<li class="jetpack-recipe-print"><a href="#">Print</a></li>', '') });
             }
           }
           this.searching = false;
@@ -62,7 +61,7 @@ export class Tab3Page implements OnInit {
     }
   }
 
-  getKeys(map){
+  getKeys(map) {
     return Array.from(map.keys());
   }
 
