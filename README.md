@@ -1,7 +1,7 @@
-# ionic4-wordpress-app
-Ionic 4 Wordpress app (iOS &amp; Android)
+# ionic5-wordpress-app
+Ionic 5 Wordpress app (iOS &amp; Android)
 
-A simple app build with Ionic v4. 
+A simple app build with Ionic v5. 
 
 - The app shows the latest posts. 
 - The categories and browse posts by category
