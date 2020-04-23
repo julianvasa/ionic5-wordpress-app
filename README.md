@@ -18,7 +18,7 @@ If you have a self-hosted wordpress blog change variable wp_org = true<br>
 `public wp_org: boolean = true;`<br>
 in `src/app/services/wordpress.service.ts`
 
-Please support this project by simply putting a Github star ⭐ 
+Please support this project by simply putting a Github star ⭐ <br>
 Share this library with friends on Twitter and everywhere else you can. 🙏
 
 It looks something like this: 
