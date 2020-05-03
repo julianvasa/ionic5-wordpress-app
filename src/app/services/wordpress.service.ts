@@ -5,12 +5,12 @@ import { HttpClient } from '@angular/common/http';
 export class WordpressService {
     items: any[];
     categories: any[];
-    public wp_org: boolean = false;
+    public wp_org: boolean = true;
     mainUrl: String = "https://public-api.wordpress.com/rest/v1.1/sites/unegatuaj.com/";
 
     constructor(private http: HttpClient) {
         if (this.wp_org == true) {
-            this.mainUrl = "http://demo.wp-api.org/wp-json/wp/v2/";
+            this.mainUrl = "https://test.frontity.io/wp-json/wp/v2/";
         }
     }
 
