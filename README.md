@@ -19,7 +19,9 @@ If you have a self-hosted wordpress blog change variable wp_org = true<br>
 in `src/app/services/wordpress.service.ts`
 
 Please support this project by simply putting a Github star ⭐ <br>
-Share this library with friends on Twitter and everywhere else you can. 🙏
+Share this library with friends on Twitter and everywhere else you can. 🙏<br>
+Check out also ionic6-wordpress-app based on React 🎉<br>
+https://github.com/julianvasa/ionic6-wordpress-react-app
 
 It looks something like this: 
 
